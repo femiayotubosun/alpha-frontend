@@ -1,6 +1,6 @@
 import { VStack, HStack, Text, Box, Image } from "@chakra-ui/react";
 import React from "react";
-import SidebarItem from "./SidebarItem";
+import SidebarItem from "../components/SidebarItem";
 import {
   RiDashboardFill,
   RiShoppingCartFill,
@@ -17,8 +17,6 @@ const Sidebar = () => {
       opacity={0.6}
       p={8}
       spacing={24}
-      left="0"
-      position="fixed"
       backdropFilter="blur(34px)"
       borderRight="1px solid #EDF3FA"
     >
@@ -40,7 +38,7 @@ const Sidebar = () => {
       <VStack w="full" spacing={4}>
         <SidebarItem icon={RiDashboardFill} label="Dashboard" />
         <SidebarItem icon={RiShoppingCartFill} label="Orders" />
-        <SidebarItem icon={HiUser} label="Customers" />
+
         <SidebarItem icon={HiGift} label="Products" />
         <SidebarItem icon={RiFeedbackFill} label="Feedback" />
         <SidebarItem icon={HiCog} label="Settings" />

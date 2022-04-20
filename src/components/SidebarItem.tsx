@@ -1,24 +1,44 @@
 import { HStack, Box, Image, Text, Icon } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 
-type SidebarItemProps = {
+export interface ISidebarItemProps {
   icon: any;
   label: string;
-};
+}
 
-const SidebarItem = (props: SidebarItemProps) => {
+const SidebarItem = (props: ISidebarItemProps) => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <HStack w="full" h="31px" spacing={2} cursor="pointer">
+    <HStack
+      w="full"
+      h="31px"
+      spacing={2}
+      cursor="pointer"
+      as="div"
+      _hover={{
+        color: "#51459E",
+      }}
+      onMouseOver={() => {
+        setHover(true);
+      }}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+      className="alpha__sidebar-item"
+    >
       <Box w="25px" h="25px">
-        <Icon color="#51459E" as={props.icon} objectFit="contain" />
+        <Icon
+          color="#514594"
+          opacity={hover ? "1" : "0.8"}
+          as={props.icon}
+          objectFit="contain"
+        />
       </Box>
 
       <Text
-        color="#1B1C31"
-        _hover={{
-          opacity: 0.8,
-        }}
-        opacity={0.4}
+        color="#514594"
+        opacity={hover ? "1" : "0.8"}
         fontSize="13px"
         fontWeight="500"
       >

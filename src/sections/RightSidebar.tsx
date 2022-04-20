@@ -1,7 +1,7 @@
 import { HStack, VStack, Heading, Circle, Text } from "@chakra-ui/react";
 import React from "react";
-import OrderCard from "./OrderCard";
-import TopCustomer from "./TopCustomer";
+import OrderCard from "../components/OrderCard";
+import TopCustomer from "../components/TopCustomer";
 
 const RightSidebar = () => {
   return (
@@ -12,8 +12,6 @@ const RightSidebar = () => {
       backdropFilter="blur(104px)"
       pt={8}
       spacing={8}
-      position="fixed"
-      right="0"
     >
       <VStack w="full" spacing={8}>
         <HStack
