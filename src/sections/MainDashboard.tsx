@@ -12,6 +12,9 @@ import {
 import React from "react";
 import { RiSearch2Line } from "react-icons/ri";
 import MainDashButton from "../components/MainDashButton";
+import MyChart from "../components/MyChart";
+import StatCard from "../components/StatCard";
+import StatProgress from "../components/StatProgress";
 
 const MainDashboard = () => {
   return (
@@ -113,10 +116,47 @@ const MainDashboard = () => {
                 Today vs Yesterday
               </Text>
             </VStack>
-            <Box w="full" h="full" bg="ghostwhite"></Box>
+            <Box w="full" h="full">
+              <MyChart />
+            </Box>
           </VStack>
 
-          <VStack w="30%" h="full" bg="yellow.200"></VStack>
+          <VStack w="30%" h="full" pt={10} spacing={4} alignItems="flex-start">
+            <Text
+              fontSize="9.8px"
+              fontWeight="500"
+              lineHeight="12.53px"
+              color="#000"
+              opacity={0.4}
+              fontFamily="'Noto Sans', sans-serif"
+            >
+              Overview
+            </Text>
+            <HStack w="full" justifyContent="space-around" alignItems="center">
+              <StatCard bg="#ECE9FF" stat="560" text="Deals" />
+              <StatCard bg="#E8FCFF" stat="$21K" text="Order Value" />
+            </HStack>
+            <VStack w="full" h="full" justifyContent="space-around">
+              <StatProgress
+                title="Meetings"
+                color="progress-green"
+                progress={20}
+                total={100}
+              />
+              <StatProgress
+                title="Deals"
+                color="progress-purple"
+                progress={60}
+                total={100}
+              />
+              <StatProgress
+                title="Order Value"
+                color="progress-black"
+                progress={40}
+                total={100}
+              />
+            </VStack>
+          </VStack>
         </HStack>
         <HStack w="full" bg="green.100">
           <VStack h="355px"></VStack>

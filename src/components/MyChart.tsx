@@ -24,18 +24,34 @@ ChartJS.register(
 );
 
 export const options = {
-  maintainAspectRatio: true,
+  // maintainAspectRatio: true,
   //   NOTE really important to make height and width props work properly
-  //   responsive: false,
+  responsive: true,
   scales: {
     x: {
+      step: 200,
+      ticks: {
+        color: "#8F92A1",
+        font: {
+          size: 8,
+          family: "Gilda Display, serif",
+        },
+      },
       grid: {
-        display: false,
+        color: "rgba(143, 146, 161, 0.1)",
       },
     },
     y: {
       grid: {
-        borderDash: [3, 3],
+        display: false,
+      },
+
+      ticks: {
+        color: "#8F92A1",
+        font: {
+          size: 8,
+          family: "Gilda Display, serif",
+        },
       },
     },
   },
@@ -43,15 +59,18 @@ export const options = {
     legend: {
       display: false,
     },
-    // title: {
-    //   display: true,
-    //   text: "Chart.js Line Chart",
-    // },
+    tooltip: {
+      backgroundColor: "#F3F6F8",
+      bodyColor: "#171717",
+      bodyAlign: "center",
+      titleColor: "#8F92A1",
+      titleAlign: "center",
+    },
   },
 
   elements: {
     line: {
-      tension: 0.5,
+      tension: 0.8,
       radius: 6, // disables bezier curves
     },
   },
@@ -63,30 +82,52 @@ const data = {
   labels,
   datasets: [
     {
-      label: "My Balance",
+      label: "Order",
       fill: false,
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: "#b57295",
-      backgroundColor: "#db86b2",
+      borderColor: "#51459E",
+      backgroundColor: "#51459E",
       CanvasLineCap: "butt",
       CanvasLineJoin: "miter",
       borderDashOffset: 0.0,
-      CanvasJoinStyle: "#b57295",
-      pointBorderColor: "#b57295",
+      CanvasJoinStyle: "#51459E",
+      pointBorderColor: "#51459E",
       pointBackgroundColor: "#fff",
       pointBorderWidth: 4,
       pointBorderRadius: 5,
-      pointHoverBackgroundColor: "#b57295",
-      pointHoverBorderColor: "#b57295",
-      pointHoverBorderRadius: 2,
+      pointHoverBackgroundColor: "#51459E",
+      pointHoverRadius: 6,
+      pointHoverBorderColor: "#fff",
+      pointHoverBorderWidth: 3,
       pointRadius: 1,
-      pointHitRadius: 10,
+      pointHitRadius: 20,
+    },
+    {
+      label: "Demand",
+      fill: false,
+      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      borderColor: "#84E8F4",
+      backgroundColor: "#84E8F4",
+      CanvasLineCap: "butt",
+      CanvasLineJoin: "miter",
+      borderDashOffset: 0.0,
+      CanvasJoinStyle: "#84E8F4",
+      pointBorderColor: "#84E8F4",
+      pointBackgroundColor: "#fff",
+      pointBorderWidth: 4,
+      pointBorderRadius: 5,
+      pointHoverBackgroundColor: "#84E8F4",
+      pointHoverRadius: 6,
+      pointHoverBorderColor: "#fff",
+      pointHoverBorderWidth: 3,
+      pointRadius: 1,
+      pointHitRadius: 20,
     },
   ],
 };
 
 const MyChart = () => {
-  return <Line options={options} data={data} />;
+  return <Line options={options} width="full" height="full" data={data} />;
 };
 
 export default MyChart;

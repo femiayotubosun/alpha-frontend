@@ -753,6 +753,11 @@
   resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.1.2.tgz#7093ea65e6d78eae388918a46968c083366bd621"
   integrity sha512-QSvmexHCxeRUk1/yKmoEDaWB5Hohjvtim5g2JJwy8S/l0L4b3y/GxSpE6vN4SBoVGGahEQW21uqyRr7EofI35A==
 
+"@fontsource/tomorrow@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/tomorrow/-/tomorrow-4.5.6.tgz#55d19a969657e1dce8775eed4e06ed416f83624b"
+  integrity sha512-6I6xofo26Ctq1PDTo81mFYcQTr7LwF9xPNono2Pc37TbfuzjcOIKCKVSwQh+PYrGRqrH4m2FsVmHv/IX4DvdWw==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
